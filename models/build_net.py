@@ -30,6 +30,8 @@ def make_model(args):
         ```
     """
     print("=> creating model '{}'".format(args.arch))
+    import pprint
+    pprint.pprint(torchvision.models.__dict__)
     model = torchvision.models.__dict__[args.arch](progress=True)
     model.fc = torch.nn.Sequential(
         torch.nn.Dropout(0.2),    

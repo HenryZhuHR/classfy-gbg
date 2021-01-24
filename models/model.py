@@ -26,7 +26,8 @@ def load_model(args):
         # model = torch.hub.load('facebookresearch/WSL-Images', 'resnext101_32x48d_wsl')
         # model=torchvision.models.resnext50_32x4d()
     print("=> creating model '{}'".format(args.arch))
-    model = torchvision.models.__dict__[args.arch](progress=True)
+    # model = torchvision.models.__dict__[args.arch](progress=True)
+    model = torch.hub.load('facebookresearch/WSL-Images', 'resnext101_32x16d_wsl')
     model.fc = torch.nn.Sequential(
         torch.nn.Dropout(0.2),    
         torch.nn.Linear(2048, args.num_classes)

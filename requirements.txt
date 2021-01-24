@@ -1,8 +1,10 @@
-pytorch==1.7.1+cu110
-torchvision==0.8.2+cu110
+# pytorch==1.7.1+cu110
+# torchvision==0.8.2+cu110
 numpy==1.19.5
 matplotlib
 scikit-image
 pandas
 sklearn
 progress
+adabound
+opencv-python

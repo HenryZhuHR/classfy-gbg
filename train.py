@@ -237,6 +237,7 @@ def main():
                                  pin_memory=True)
     # 加载模型,并且做并行化处理
     model = models.model.load_model(args)
+    # model=make_model(args)
     if args.arch.startswith('alexnet') or args.arch.startswith('vgg'):
         model.features = torch.nn.DataParallel(model.features)
         model.cuda()
