@@ -1,0 +1,2 @@
+LearningRate	Loss	Valid Loss	Train Acc.	Valid Acc.	
+0.001000	3.444549	5.206457	8.400182	13.633265

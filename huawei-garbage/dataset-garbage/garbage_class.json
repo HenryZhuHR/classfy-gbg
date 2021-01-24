@@ -1,0 +1,22 @@
+{
+    "0": "battery",
+    "1": "bottleEmpty",
+    "2": "bottleLabled",
+    "3": "can",
+    "4": "cigarette",
+    "5": "fruit_apple",
+    "6": "fruit_banana",
+    "7": "fruit_nuts",
+    "8": "fruit_orange",
+    "9": "fruit_pear",
+    "10": "fruit_pineapple",
+    "11": "fruit_pitaya",
+    "12": "fruit_strawberry",
+    "13": "vegetable_carrot",
+    "14": "vegetable_cauliflower",
+    "15": "vegetable_chili_green",
+    "16": "vegetable_chili_red",
+    "17": "vegetable_green",
+    "18": "vegetable_potato",
+    "19": "vegetable_tomato"
+}
