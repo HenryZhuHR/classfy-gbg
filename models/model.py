@@ -7,13 +7,30 @@ import torch
 import torchvision
 
 
-def load_model():
+def load_model(args):
+    """
+        加载模型
+        ---
+        输出全连接层做如下优化:
+        ```python
+        model.fc = nn.Sequential(
+            nn.Dropout(0.2),
+            nn.Linear(2048, args.num_classes)
+        )
+        ```
+    """
     # 32*4d表示32个paths，每个path的宽度为4
-    # model = torch.hub.load('facebookresearch/WSL-Images', 'resnext101_32x8d_wsl')
-    model = torch.hub.load('facebookresearch/WSL-Images', 'resnext101_32x16d_wsl')
-    # model = torch.hub.load('facebookresearch/WSL-Images', 'resnext101_32x32d_wsl')
-    # model = torch.hub.load('facebookresearch/WSL-Images', 'resnext101_32x48d_wsl')
-    # model=torchvision.models.resnext50_32x4d()
+        # model = torch.hub.load('facebookresearch/WSL-Images', 'resnext101_32x8d_wsl')
+        # model = torch.hub.load('facebookresearch/WSL-Images', 'resnext101_32x16d_wsl')
+        # model = torch.hub.load('facebookresearch/WSL-Images', 'resnext101_32x32d_wsl')
+        # model = torch.hub.load('facebookresearch/WSL-Images', 'resnext101_32x48d_wsl')
+        # model=torchvision.models.resnext50_32x4d()
+    print("=> creating model '{}'".format(args.arch))
+    model = torchvision.models.__dict__[args.arch](progress=True)
+    model.fc = torch.nn.Sequential(
+        torch.nn.Dropout(0.2),    
+        torch.nn.Linear(2048, args.num_classes)
+    )
     return model
 
 def inference():
@@ -65,3 +82,4 @@ Our models significantly improve the training accuracy on ImageNet compared to t
 
  - [Exploring the Limits of Weakly Supervised Pretraining](https://arxiv.org/abs/1805.00932)
 """
+

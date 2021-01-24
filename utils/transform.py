@@ -1,12 +1,8 @@
-#!usr/bin/env python
+# usr/bin/env python
 #-*- coding:utf-8 _*- 
 """
-@version: python3.6
-@author: QLMX
-@contact: wenruichn@gmail.com
-@time: 2019-09-07 18:54
-公众号：AI成长社
-知乎：https://www.zhihu.com/people/qlmx-61/columns
+    数据增强文件
+    ---
 """
 import random
 import math

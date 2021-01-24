@@ -1,5 +1,6 @@
 """
-    图像预处理
+    数据预处理文件，生成坐标标签
+    ---
 """
 from glob import glob
 import os
